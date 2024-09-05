@@ -29,7 +29,7 @@ body {
 
 .container {
   width: 100%;
-  padding: 2.5rem 2rem;
+  padding: 2rem 2rem;
   background-color: var(--White);
 }
 
@@ -47,7 +47,7 @@ h1 {
   font-size: 2.2rem;
   color: var(--Stone-900);
   line-height: 110%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 p,
@@ -57,12 +57,38 @@ li {
 }
 
 section {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
+}
+
+ul,
+ol {
+  list-style-position: outside;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin-left: 1.75rem;
+}
+
+li,
+li:active {
+  padding-left: 1.25rem;
+}
+
+.span-bold {
+  font-weight: 700;
 }
 
 .section__title,
-.red__text {
+.red__text,
+.ingredients li::marker,
+.instructions li::marker {
   color: var(--Brown-800);
+}
+
+.section__title,
+.nutrition p {
+  margin-bottom: 1.5rem;
 }
 
 hr {
@@ -74,20 +100,10 @@ hr {
   padding: 1.5rem;
 }
 
-.prep-time__title {
+.prep-time__title,
+.prep-time li::marker {
   color: var(--Rose-800);
   margin-bottom: 1.5rem;
-}
-
-.prep-time ul {
-  padding: 0 3rem 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.instructions {
-  /* margin: 0; */
 }
 
 table {
@@ -101,6 +117,13 @@ tr {
 
 th {
   width: 50%;
+  text-align: left;
+  padding: 0.625rem 2rem;
+}
+
+.footer {
+  display: block;
+  margin-top: auto;
 }
 
 .attribution {
@@ -112,23 +135,33 @@ th {
 }
 
 @media screen and (min-width: 601px) {
-  main {
+  body {
+    background-color: var(--Stone-100);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    padding: 7.5rem 0 0 0;
+  }
+  main {
+    max-width: 730px;
+    margin: 0 auto;
+    background-color: var(--White);
+    border-radius: 20px;
+    margin-bottom: 7.5rem;
   }
 
-  /* .container {
-    width: min(88.652%, 384px);
-    display: flex;
-    padding: var(--spacing-200);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--Grey-800);
-    border-radius: 1.25rem;
-    text-align: center;
-    gap: var(--spacing-200);
-  } */
+  .hero__img {
+    margin: 2.5rem 2.5rem 0 2.5rem;
+  }
+
+  .container {
+    border-radius: 20px;
+  }
+
+  th {
+    padding: 0.625rem 1rem;
+  }
+
+  .hero__img img {
+    border-radius: 15px;
+  }
 }
